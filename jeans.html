@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeans — Bazare Jenna</title>
+  <meta name="description" content="Découvrez notre rayon jeans : jean droit, slim, large, taille haute et bien plus chez Bazare Jenna.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap">
+
+  <!-- Feuille de style -->
+  <link rel="stylesheet" href="magasin.css">
+</head>
+<body>
+
+  <!-- ── Éléments du curseur personnalisé (desktop) ── -->
+  <div class="cursor-dot"  aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ── Bouton retour en haut ── -->
+  <button class="btn-top" aria-label="Retour en haut">
+    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2.5"
+         stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- ═══════════════════════════════════════════════
+       EN-TÊTE PARTAGÉ
+       ═══════════════════════════════════════════════ -->
+  <header class="site-header">
+
+    <div class="header-logo">
+      <a href="index.html">
+        <img src="images/pro.png" alt="Logo Bazare Jenna" height="60">
+      </a>
+    </div>
+
+    <nav class="header-nav" aria-label="Navigation principale">
+      <a href="chaussures.html">Chaussures</a>
+      <a href="jeans.html" class="nav-active" aria-current="page">Jeans</a>
+      <a href="vetements.html">Vêtements</a>
+      <a href="accessoires.html">Accessoires</a>
+    </nav>
+
+    <button class="btn-panier" aria-label="Panier">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"
+           fill="none" stroke="#12151A" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </svg>
+    </button>
+
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       CONTENU PRINCIPAL
+       ═══════════════════════════════════════════════ -->
+  <main>
+
+    <!-- ── EN-TÊTE DE PAGE ── -->
+    <div class="page-top">
+
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html" class="breadcrumb__link">Accueil</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span class="breadcrumb__current">Jeans</span>
+      </nav>
+
+      <div class="page-title-row">
+        <div class="page-h1-deco reveal">
+          <span class="deco-line" aria-hidden="true"></span>
+          <h1 class="page-h1">Jeans</h1>
+        </div>
+        <span class="page-count" id="compteur-produits">8 produits</span>
+      </div>
+
+      <form class="search-form search-form--wide" id="form-recherche-categorie" role="search" novalidate>
+        <span class="search-form__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </span>
+        <input
+          type="search"
+          id="input-recherche-categorie"
+          class="search-form__input"
+          placeholder="Rechercher dans les jeans…"
+          aria-label="Rechercher dans les jeans"
+          autocomplete="off"
+        >
+        <button type="submit" class="search-form__btn">Rechercher</button>
+      </form>
+
+      <nav class="category-chips" aria-label="Accès rapide aux rayons">
+        <a href="chaussures.html" class="category-chip">Chaussures</a>
+        <a href="jeans.html"      class="category-chip category-chip--active" aria-current="page">Jeans</a>
+        <a href="vetements.html"  class="category-chip">Vêtements</a>
+        <a href="accessoires.html" class="category-chip">Accessoires</a>
+      </nav>
+
+    </div><!-- /.page-top -->
+
+
+    <!-- ── BARRE DE FILTRES ── -->
+    <div class="filter-bar" role="toolbar" aria-label="Filtres produits">
+      <button class="filter-btn" type="button" aria-haspopup="listbox">
+        Taille
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <button class="filter-btn" type="button" aria-haspopup="listbox">
+        Coupe
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <button class="filter-btn" type="button" aria-haspopup="listbox">
+        Prix
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <button class="filter-btn filter-btn--sort" type="button" aria-haspopup="listbox">
+        Trier par
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+
+
+    <!-- ── GRILLE DE PRODUITS ── -->
+    <section class="category-products-section" aria-label="Produits jeans">
+      <div class="category-products-grid" id="grille-produits">
+
+        <article class="product-card reveal" data-nom="Jean droit" data-delay="1">
+          <div class="product-card__image-wrap">
+            <div class="product-card__image-box tint-jeans">Photo produit</div>
+            <span class="badge-nouveau">Nouveau</span>
+            <button class="btn-favori" aria-label="Ajouter aux favoris" type="button">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card__info">
+            <span class="product-card__name">Jean droit</span>
+            <span class="product-card__price">[PRIX] €</span>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-nom="Jean slim" data-delay="2">
+          <div class="product-card__image-wrap">
+            <div class="product-card__image-box tint-jeans">Photo produit</div>
+            <button class="btn-favori" aria-label="Ajouter aux favoris" type="button">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card__info">
+            <span class="product-card__name">Jean slim</span>
+            <span class="product-card__price">[PRIX] €</span>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-nom="Jean large" data-delay="3">
+          <div class="product-card__image-wrap">
+            <div class="product-card__image-box tint-jeans">Photo produit</div>
+            <button class="btn-favori" aria-label="Ajouter aux favoris" type="button">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card__info">
+            <span class="product-card__name">Jean large</span>
+            <span class="product-card__price">[PRIX] €</span>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-nom="Jean taille haute" data-delay="4">
+          <div class="product-card__image-wrap">
+            <div class="product-card__image-box tint-jeans">Photo produit</div>
+            <button class="btn-favori" aria-label="Ajouter aux favoris" type="button">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card__info">
+            <span class="product-card__name">Jean taille haute</span>
+            <span class="product-card__price">[PRIX] €</span>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-nom="Jean délavé" data-delay="5">
+          <div class="product-card__image-wrap">
+            <div class="product-card__image-box tint-jeans">Photo produit</div>
+            <button class="btn-favori" aria-label="Ajouter aux favoris" type="button">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card__info">
+            <span class="product-card__name">Jean délavé</span>
+            <span class="product-card__price">[PRIX] €</span>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-nom="Jean noir" data-delay="6">
+          <div class="product-card__image-wrap">
+            <div class="product-card__image-box tint-jeans">Photo produit</div>
+            <button class="btn-favori" aria-label="Ajouter aux favoris" type="button">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card__info">
+            <span class="product-card__name">Jean noir</span>
+            <span class="product-card__price">[PRIX] €</span>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-nom="Jean brut" data-delay="7">
+          <div class="product-card__image-wrap">
+            <div class="product-card__image-box tint-jeans">Photo produit</div>
+            <button class="btn-favori" aria-label="Ajouter aux favoris" type="button">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card__info">
+            <span class="product-card__name">Jean brut</span>
+            <span class="product-card__price">[PRIX] €</span>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-nom="Short en jean" data-delay="8">
+          <div class="product-card__image-wrap">
+            <div class="product-card__image-box tint-jeans">Photo produit</div>
+            <button class="btn-favori" aria-label="Ajouter aux favoris" type="button">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card__info">
+            <span class="product-card__name">Short en jean</span>
+            <span class="product-card__price">[PRIX] €</span>
+          </div>
+        </article>
+
+        <p id="msg-aucun-produit" class="no-products-msg" role="status" aria-live="polite">
+          Aucun produit trouvé.
+        </p>
+
+      </div><!-- /#grille-produits -->
+    </section>
+
+  </main><!-- /main -->
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <span class="footer-brand">Bazare Jenna</span>
+      <span class="footer-copy">© [ANNÉE] Bazare Jenna. Tous droits réservés.</span>
+    </div>
+    <nav class="footer-nav" aria-label="Liens rapides">
+      <a href="chaussures.html">Chaussures</a>
+      <a href="jeans.html">Jeans</a>
+      <a href="vetements.html">Vêtements</a>
+      <a href="accessoires.html">Accessoires</a>
+    </nav>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bazare Jenna — Vêtements, Chaussures, Jeans &amp; Accessoires</title>
+  <meta name="description" content="Bazare Jenna, votre boutique mode et style. Découvrez notre sélection de vêtements, chaussures, jeans et accessoires.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap">
+
+  <!-- Feuille de style -->
+  <link rel="stylesheet" href="magasin.css">
+</head>
+<body>
+  <!-- ── Bouton retour en haut ── -->
+  <button class="btn-top" aria-label="Retour en haut">
+    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2.5"
+         stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- ═══════════════════════════════════════════════
+       EN-TÊTE PARTAGÉ
+       ═══════════════════════════════════════════════ -->
+  <header class="site-header">
+
+    <!-- Logo -->
+    <div class="header-logo">
+      <a href="index.html">
+        <img src="images/pro.png" alt="Logo Bazare Jenna" height="60">
+      </a>
+    </div>
+
+    <!-- Navigation centrale -->
+    <nav class="header-nav" aria-label="Navigation principale">
+      <a href="index.html" class="nav-active" aria-current="page">Accueil</a>
+      <a href="chaussures.html">Chaussures</a>
+      <a href="jeans.html">Jeans</a>
+      <a href="vetements.html">Vêtements</a>
+      <a href="accessoires.html">Accessoires</a>
+    </nav>
+
+    <!-- Bouton panier -->
+    <button class="btn-panier" aria-label="Panier">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"
+           fill="none" stroke="#12151A" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </svg>
+    </button>
+
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       CONTENU PRINCIPAL
+       ═══════════════════════════════════════════════ -->
+  <main>
+
+    <!-- ── 1) SECTION HÉRO (avec fond dégradé + blobs) ── -->
+    <div class="hero-wrapper">
+
+      <!-- Formes décoratives flottantes (pointer-events: none dans CSS) -->
+      <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob--3" aria-hidden="true"></div>
+
+      <section class="hero-section" aria-labelledby="hero-titre">
+
+        <!-- Colonne gauche -->
+        <div class="hero-left reveal">
+
+          <p class="hero-label">Bienvenue dans notre magasin</p>
+
+          <h1 id="hero-titre" class="hero-h1">
+            Vêtements, chaussures et bien plus, au même endroit.
+          </h1>
+
+          <p class="hero-desc">
+             Cherchez un article ou choisissez directement un rayon.
+          </p>
+
+          <!-- Barre de recherche -->
+          <form class="search-form" id="form-recherche-accueil" role="search" novalidate>
+            <span class="search-form__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </span>
+            <input
+              type="search"
+              id="input-recherche-accueil"
+              class="search-form__input"
+              placeholder="Rechercher : baskets, jean, veste…"
+              aria-label="Rechercher un produit"
+              autocomplete="off"
+            >
+            <button type="submit" class="search-form__btn">Rechercher</button>
+          </form>
+
+          <!-- Message aucun rayon trouvé -->
+          <p id="msg-aucun-rayon" class="search-no-result" role="alert">
+            Aucun rayon trouvé pour cette recherche. Essayez&nbsp;: chaussures, jeans, vêtements ou accessoires.
+          </p>
+
+          <!-- Chips de catégorie -->
+          <nav class="category-chips" aria-label="Accès rapide aux rayons">
+            <a href="chaussures.html" class="category-chip">Chaussures</a>
+            <a href="jeans.html"      class="category-chip">Jeans</a>
+            <a href="vetements.html"  class="category-chip">Vêtements</a>
+            <a href="accessoires.html" class="category-chip">Accessoires</a>
+          </nav>
+
+        </div><!-- /.hero-left -->
+
+        <!-- Colonne droite : photo du magasin -->
+        <div class="hero-right reveal" data-delay="2">
+          <div class="hero-image-box">
+            <!-- Remplacez ce div par <img src="…" alt="Photo du magasin Bazare Jenna"> -->
+            Photo du magasin à ajouter ici
+          </div>
+        </div>
+
+      </section><!-- /.hero-section -->
+    </div><!-- /.hero-wrapper -->
+
+
+    <!-- ── BANDEAU DÉFILANT ── -->
+    <div class="marquee-band" aria-hidden="true">
+      <div class="marquee-track">
+        <!-- Contenu répété deux fois pour un défilement continu -->
+        <span class="marquee-item">Nouvelle collection</span>
+        <span class="marquee-sep">·</span>
+        <span class="marquee-item">Chaussures</span>
+        <span class="marquee-sep">·</span>
+        <span class="marquee-item">Jeans</span>
+        <span class="marquee-sep">·</span>
+        <span class="marquee-item">Vêtements</span>
+        <span class="marquee-sep">·</span>
+        <span class="marquee-item">Accessoires</span>
+        <span class="marquee-sep">·</span>
+        <span class="marquee-item">Bazare Jenna</span>
+        <span class="marquee-sep">·</span>
+        <!-- Deuxième copie pour le défilement sans saut -->
+        <span class="marquee-item">Nouvelle collection</span>
+        <span class="marquee-sep">·</span>
+        <span class="marquee-item">Chaussures</span>
+        <span class="marquee-sep">·</span>
+        <span class="marquee-item">Jeans</span>
+        <span class="marquee-sep">·</span>
+        <span class="marquee-item">Vêtements</span>
+        <span class="marquee-sep">·</span>
+        <span class="marquee-item">Accessoires</span>
+        <span class="marquee-sep">·</span>
+        <span class="marquee-item">Bazare Jenna</span>
+        <span class="marquee-sep">·</span>
+      </div>
+    </div>
+
+
+    <!-- ── 2) SECTION NOS RAYONS ── -->
+    <section class="rayons-section" aria-labelledby="rayons-titre">
+
+      <div class="section-heading-row reveal">
+        <div class="section-heading-block">
+          <span class="deco-line" aria-hidden="true"></span>
+          <h2 id="rayons-titre" class="section-h2">Nos rayons</h2>
+        </div>
+        <p class="section-subtitle">Touchez un rayon pour voir tous ses produits</p>
+      </div>
+
+      <div class="rayons-grid">
+
+        <!-- Carte Chaussures -->
+        <a href="chaussures.html" class="rayon-card reveal" data-delay="1">
+          <div class="rayon-card__image-box tint-chaussures">
+            <span>Photo chaussures</span>
+          </div>
+          <div class="rayon-card__footer">
+            <span class="rayon-card__name">Chaussures</span>
+            <span class="rayon-card__arrow" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Carte Jeans -->
+        <a href="jeans.html" class="rayon-card reveal" data-delay="2">
+          <div class="rayon-card__image-box tint-jeans">
+            <span>Photo jeans</span>
+          </div>
+          <div class="rayon-card__footer">
+            <span class="rayon-card__name">Jeans</span>
+            <span class="rayon-card__arrow" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Carte Vêtements -->
+        <a href="vetements.html" class="rayon-card reveal" data-delay="3">
+          <div class="rayon-card__image-box tint-vetements">
+            <span>Photo vêtements</span>
+          </div>
+          <div class="rayon-card__footer">
+            <span class="rayon-card__name">Vêtements</span>
+            <span class="rayon-card__arrow" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Carte Accessoires -->
+        <a href="accessoires.html" class="rayon-card reveal" data-delay="4">
+          <div class="rayon-card__image-box tint-accessoires">
+            <span>Photo accessoires</span>
+          </div>
+          <div class="rayon-card__footer">
+            <span class="rayon-card__name">Accessoires</span>
+            <span class="rayon-card__arrow" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+
+      </div><!-- /.rayons-grid -->
+
+    </section><!-- /.rayons-section -->
+
+
+    <!-- ── 3) SECTION NOUVEAUTÉS ── -->
+    <section class="nouveautes-section" aria-labelledby="nouveautes-titre">
+
+      <div class="section-heading-row reveal">
+        <div class="section-heading-block">
+          <span class="deco-line" aria-hidden="true"></span>
+          <h2 id="nouveautes-titre" class="section-h2">Nouveautés</h2>
+        </div>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Produit 1 — badge "Nouveau" -->
+        <article class="product-card reveal" data-delay="1">
+          <div class="product-card__image-wrap">
+            <div class="product-card__image-box tint-produit">
+              Photo produit
+            </div>
+            <span class="badge-nouveau">Nouveau</span>
+            <button class="btn-favori" aria-label="Ajouter aux favoris" type="button">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"
+                   fill="none" stroke="#12151A" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__info">
+            <span class="product-card__name">Baskets blanches</span>
+            <span class="product-card__price">[PRIX] €</span>
+          </div>
+        </article>
+
+        <!-- Produit 2 — badge "Nouveau" -->
+        <article class="product-card reveal" data-delay="2">
+          <div class="product-card__image-wrap">
+            <div class="product-card__image-box tint-produit">
+              Photo produit
+            </div>
+            <span class="badge-nouveau">Nouveau</span>
+            <button class="btn-favori" aria-label="Ajouter aux favoris" type="button">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"
+                   fill="none" stroke="#12151A" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__info">
+            <span class="product-card__name">Jean droit brut</span>
+            <span class="product-card__price">[PRIX] €</span>
+          </div>
+        </article>
+
+        <!-- Produit 3 -->
+        <article class="product-card reveal" data-delay="3">
+          <div class="product-card__image-wrap">
+            <div class="product-card__image-box tint-produit">
+              Photo produit
+            </div>
+            <button class="btn-favori" aria-label="Ajouter aux favoris" type="button">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"
+                   fill="none" stroke="#12151A" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__info">
+            <span class="product-card__name">Veste en toile</span>
+            <span class="product-card__price">[PRIX] €</span>
+          </div>
+        </article>
+
+        <!-- Produit 4 -->
+        <article class="product-card reveal" data-delay="4">
+          <div class="product-card__image-wrap">
+            <div class="product-card__image-box tint-produit">
+              Photo produit
+            </div>
+            <button class="btn-favori" aria-label="Ajouter aux favoris" type="button">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"
+                   fill="none" stroke="#12151A" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__info">
+            <span class="product-card__name">Sac à bandoulière</span>
+            <span class="product-card__price">[PRIX] €</span>
+          </div>
+        </article>
+
+      </div><!-- /.products-grid -->
+
+    </section><!-- /.nouveautes-section -->
+
+
+    <!-- ── 4) BANDEAU INFORMATIONS DU MAGASIN ── -->
+    <section class="store-info-band reveal" aria-label="Informations du magasin">
+
+      <div class="store-info-col">
+        <span class="store-info-label">Adresse</span>
+        <span class="store-info-value">[ADRESSE DU MAGASIN]</span>
+      </div>
+
+      <div class="store-info-col">
+        <span class="store-info-label">Horaires</span>
+        <span class="store-info-value">[HORAIRES D'OUVERTURE]</span>
+      </div>
+
+      <div class="store-info-col">
+        <span class="store-info-label">Contact</span>
+        <span class="store-info-value">[TÉLÉPHONE] · [E-MAIL]</span>
+      </div>
+
+    </section><!-- /.store-info-band -->
+
+  </main><!-- /main -->
+
+
+  <!-- ═══════════════════════════════════════════════
+       PIED DE PAGE PARTAGÉ — AMÉLIORÉ
+       ═══════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <span class="footer-brand">Bazare Jenna</span>
+      <span class="footer-copy">© [ANNÉE] Bazare Jenna. Tous droits réservés.</span>
+    </div>
+    <nav class="footer-nav" aria-label="Liens rapides">
+      <a href="chaussures.html">Chaussures</a>
+      <a href="jeans.html">Jeans</a>
+      <a href="vetements.html">Vêtements</a>
+      <a href="accessoires.html">Accessoires</a>
+    </nav>
+  </footer>
+
+  <!-- Script partagé -->
+  <script src="script.js"></script>
+
+</body>
+</html>
